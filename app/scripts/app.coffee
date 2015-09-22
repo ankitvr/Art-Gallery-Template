@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'restangular'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -29,4 +31,3 @@ angular
         controllerAs: 'about'
       .otherwise
         redirectTo: '/'
-

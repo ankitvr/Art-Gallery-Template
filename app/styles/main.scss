@@ -1,4 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+// custom:scss
+@import "sections/header.scss";
+// endCustom
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -88,4 +92,10 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
 }
