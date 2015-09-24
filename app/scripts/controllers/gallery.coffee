@@ -8,14 +8,13 @@
  # Controller of the artTemplateApp
 ###
 angular.module 'artTemplateApp'
-  .controller 'GalleryCtrl', ->
-    @galleryDetails=[
-                      {title:"Home" ,description:"",location:"",imageLocation:"http://lorempixel.com/1600/600/sports/1" }
-                      {title:"Home" ,description:"",location:"",imageLocation:"http://lorempixel.com/1600/600/sports/2" }
-                      {title:"Home" ,description:"",location:"",imageLocation:"http://lorempixel.com/1600/600/sports/3" }
-                      {title:"Home" ,description:"",location:"",imageLocation:"http://lorempixel.com/1600/600/sports/4" }
-                      {title:"Home" ,description:"",location:"",imageLocation:"http://lorempixel.com/1600/600/sports/5" }
-                    ]
+  .controller 'GalleryCtrl', ($scope, Restangular)->
+    @galleryDetails=Restangular.all 'galleryDetails'
+                      .getList()
+                      .$object
     @myInterval = 5000
     @noWrapSlides = false
+    @viewGallery = true
+    @viewImageDetails = false
+    @switchViewMode = -> this.viewGallery = this.viewGallery == false?true:false
     return

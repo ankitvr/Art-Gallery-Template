@@ -10,9 +10,9 @@
 angular.module 'artTemplateApp'
   .controller 'FooterCtrl', ->
     @footerLinks=[
-      {title:"Feedback",landingPage:"#/feedback"}
-      {title:"Contact US",landingPage:"#/Contact"}
-      {title:"FAQ",landingPage:"#/faq"}
+      {footerTitle:"Feedback",landingPage:"#/feedback"}
+      {footerTitle:"Contact US",landingPage:"#/Contact"}
+      {footerTitle:"FAQ",landingPage:"#/faq"}
     ]
     @copyRightMessage="\u00A9 Copyright #{new Date().getFullYear()} Geographical Survey of India,Minister of mines,Goverment of India"
     return

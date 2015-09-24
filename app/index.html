@@ -22,35 +22,51 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-inverse" role="navigation" ng-controller="NavigationbarCtrl as navigationDetails">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">artTemplate</a>
-          </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul ng-repeat="details in navigationDetails.navigationLinks" class="nav navbar-nav">
-                <li><a ng-href="{{details.navigationPage}}">{{details.title}}</a></li>
-            </ul>
-          </div>
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-xs-9">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">artTemplate</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                    <ul ng-repeat="details in navigationDetails.navigationLinks" class="nav navbar-nav">
+                        <li><a ng-href="{{details.navigationPage}}">{{details.navTitle}}</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <div class="searchContainer">
+                    <div ng-controller="GalleryCtrl as gallery">
+                        <form action="#">
+                                <input type="text" keyboard-poster post-function="searchFlight" placeholder="Type to Search" list="galleryItems" >
+                                  <datalist id="galleryItems">
+                                     <select id="_select" name="_select" ng-model='gallery.galleryDetailsIndexes' ng-options='k as v for (k,v) in countries'></select>
+                                  </datalist>
+                        </form>
+                    </div>
+                  </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
 
-        <div class="container">
+        <div class="container-fluid">
         <div ng-view=""></div>
         </div>
 
     <div class="footer">
-      <div class="container">
+      <div class="container-fluid">
         <div ng-controller="FooterCtrl as footer">
           <div ng-Repeat="footerLink in footer.footerLinks" class="col-xs-1">
-              <a ng-href="{{footerLink.landingPage}}">{{footerLink.title}}</a>
+              <a ng-href="{{footerLink.landingPage}}">{{footerLink.footerTitle}}</a>
           </div>
           <div class="pull-right col-xs-6">
             <p>{{footer.copyRightMessage}}</p>
@@ -74,7 +90,6 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -83,7 +98,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -95,6 +111,10 @@
         <script src="scripts/controllers/navigationbar.js"></script>
         <script src="scripts/controllers/gallery.js"></script>
         <script src="scripts/controllers/footer.js"></script>
+
+        <script src="scripts/directives/gallerydetails.js"></script>
+        <script src="scripts/directives/galleryimagedetails.js"></script>
+        <script src="scripts/controllers/search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

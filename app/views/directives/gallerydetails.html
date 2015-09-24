@@ -1,0 +1,15 @@
+<carousel interval="gallery.myInterval" no-wrap="noWrapSlides">
+    <slide  active="slide.active" ng-repeat="slide in gallery.galleryDetails" ng-show="{{gallery.viewGallery}}">
+      <a href ng-click="gallery.switchViewMode()">
+        <img ng-src="{{slide.imageLocation}}">
+          <div class="carousel-caption">
+              <h4>{{slide.imageTitle}}</h4>
+              <p>{{slide.description}}</p>
+              <h1>{{slide.location}}</h1>
+          </div>
+      </a>
+      <div ng-hide="{{gallery.viewGallery}}">
+          <gallery-image-details></gallery-image-details>
+      </div>
+    </slide>
+  </carousel>

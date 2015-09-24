@@ -1,0 +1,13 @@
+{
+  "query": "SampleQuery",
+  "results":[{"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"},
+              {"resultTitle":"SampleResults","resultShortDescrition":"Short Description"}],
+  "numberOfResults": 7
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "navTitle": "Home",
+    "navigationPage": "#/demoLink"
+    }, {
+      "navTitle": "Museums",
+      "navigationPage": "#/demoLink"
+      }, {
+        "navTitle": "Categories",
+        "navigationPage": "#/demoLink"
+        }, {
+          "navTitle": "Events at GSI",
+          "navigationPage": "#/demoLink"
+          }, {
+            "navTitle": "About GSI",
+            "navigationPage": "#/demoLink"
+            },{
+              "navTitle": "News",
+              "navigationPage": "#/demoLink"
+              }, {
+                "navTitle": "Feedback",
+                "navigationPage": "#/demoLink"
+              }
+            ]
