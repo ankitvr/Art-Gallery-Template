@@ -13,4 +13,9 @@ angular.module 'artTemplateApp'
   @searchResults=Restangular.one 'searchResults'
   .get()
   .$object
+  $scope.onFormSubmit = ->
+          if myForm.$valid then alert('hi');
+
+
+
   return

@@ -23,6 +23,12 @@ angular
             RestangularProvider.setBaseUrl 'http://localhost:9000/data'
             RestangularProvider.setRequestSuffix '.json'
 
+.config ($httpProvider)->
+      $httpProvider.defaults.useXDomain = true
+      $httpProvider.defaults.withCredentials = true
+      delete $httpProvider.defaults.headers.common["X-Requested-With"]
+      $httpProvider.defaults.headers.common["Accept"] = "application/json"
+      $httpProvider.defaults.headers.common["Content-Type"] = "application/json"
 .config ($routeProvider) ->
   $routeProvider
     .when '/',
@@ -39,6 +45,11 @@ angular
       templateUrl: 'views/search.html'
       controller: 'SearchCtrl'
       controllerAs: 'search'
+
+    .when '/news',
+      templateUrl: 'views/newsfeeds.html'
+      controller: 'NewsfeedCtrl'
+      controllerAs: 'newsFeed'
 
     .otherwise
       redirectTo: '/'

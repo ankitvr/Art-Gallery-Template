@@ -16,7 +16,7 @@
             "navigationPage": "#/demoLink"
             },{
               "navTitle": "News",
-              "navigationPage": "#/demoLink"
+              "navigationPage": "#/news"
               }, {
                 "navTitle": "Feedback",
                 "navigationPage": "#/demoLink"
